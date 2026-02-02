@@ -1,0 +1,180 @@
+/* --- MISSION LOGS: WIDESCREEN & CENTERED --- */
+
+/* 1. GLOBAL RESET */
+* {
+    text-transform: none !important;
+    font-variant: normal !important;
+    box-sizing: border-box;
+}
+
+/* 2. BASE HULL */
+body {
+    background-image: url('../assets/log-vista.png'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    background-color: rgba(15, 0, 30, 0.75); 
+    background-blend-mode: multiply;
+    
+    color: #e0d4ff; 
+    font-family: "Snell Roundhand", cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden; /* Prevent side scrolling */
+}
+
+/* 3. LOGO */
+.sector-logo {
+    width: 300px !important;  
+    height: auto !important;  
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: block;
+    filter: sepia(100%) saturate(300%) hue-rotate(230deg) drop-shadow(0 0 20px rgba(180, 150, 255, 0.6));
+}
+
+/* 4. TITLES */
+.site-title, h1 {
+    font-size: 3.5rem !important; 
+    color: #e0d4ff !important;
+    text-shadow: 0 0 25px rgba(180, 150, 255, 1) !important;
+    margin-top: 20px;
+    text-align: center;
+}
+
+h2, h3 {
+    font-size: 2.5rem !important; 
+    color: #e0d4ff !important;
+    margin: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+
+/* 5. TEXT STYLING - FORCED CENTER */
+p, .protocol-tag {
+    font-size: 2rem !important; /* Increased for widescreen */
+    color: #e0d4ff !important;
+    text-shadow: 0 0 15px rgba(180, 150, 255, 0.8) !important;
+    line-height: 1.6;
+    text-align: center !important; /* STOPS HUGGING LEFT */
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/* LISTS (The Guidelines) */
+ul {
+    list-style: none; /* Remove bullets */
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+li {
+    font-size: 1.8rem !important;
+    color: #e0d4ff !important;
+    text-shadow: 0 0 15px rgba(180, 150, 255, 0.8);
+    text-align: center !important; /* Center the list items */
+    margin-bottom: 15px;
+}
+
+/* 6. CONTAINER - WIDESCREEN */
+.log-container {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    padding: 20px;
+    
+    /* THE FIX: OPEN THE WIDTH */
+    width: 95%; 
+    max-width: 1600px; /* Was 900px */
+    
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 7. THE KILL SWITCH (Ensures no borders remain) */
+#logDisplayArea, 
+#logDisplayArea div, 
+.log-entry, 
+.guidelines-box {
+    border: none !important;
+    border-left: none !important; 
+    background: transparent !important;
+    box-shadow: none !important;
+    width: 100%; /* Fill the wide container */
+    text-align: center;
+}
+
+/* 8. INPUT AREA */
+/* Keep the input slightly narrower so it looks like a terminal */
+.terminal-input {
+    width: 100%;
+    max-width: 800px; /* Keeps the typing area focused */
+    margin: 0 auto;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    background: rgba(224, 212, 255, 0.1) !important; 
+    border: none !important;
+    border-bottom: 2px solid rgba(180, 150, 255, 0.6) !important;
+    color: #e0d4ff !important; 
+    font-family: "Courier New", monospace; 
+    font-size: 1.2rem !important; 
+    padding: 15px;
+    margin-top: 20px;
+    outline: none;
+    resize: none;
+    text-align: left; /* Keep typing aligned left naturally */
+}
+
+/* 9. NAVIGATION & BUTTONS */
+.nav-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.btn {
+    display: inline-block;
+    font-size: 1.5rem !important; 
+    font-family: "Snell Roundhand", cursive;
+    color: #b496ff !important; 
+    border: 1px solid #b496ff !important; 
+    padding: 10px 40px;
+    background: transparent;
+    text-decoration: none;
+    text-shadow: 0 0 10px #b496ff;
+    cursor: pointer;
+    transition: 0.5s;
+    border-radius: 5px;
+    margin-top: 25px;
+}
+
+.btn:hover {
+    color: #ffffff !important;
+    background: rgba(180, 150, 255, 0.2) !important;
+    text-shadow: 0 0 20px #d1b3ff;
+    box-shadow: 0 0 20px #b496ff;
+}
+
+/* 10. DYNAMIC LOG FEED CONTROL */
+#logDisplayArea {
+    margin-top: 30px;
+    max-width: 900px;
+    width: 90%;
+    /* Centers the block if it gets smaller than the screen */
+    margin-left: auto;
+    margin-right: auto;
+}

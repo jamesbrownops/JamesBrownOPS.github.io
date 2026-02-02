@@ -1,0 +1,131 @@
+/* --- SIGNAL PORTAL: SILVER CALLIGRAPHY --- */
+
+/* 1. GLOBAL SETTINGS */
+body {
+    background-image: url('../assets/signal-deck.png'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    /* Dark Dimmer to make Silver pop */
+    background-color: rgba(0, 0, 0, 0.5); 
+    background-blend-mode: multiply;
+
+    font-family: "Snell Roundhand", cursive; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* 2. SILVER LOGO & TEXT */
+.sector-logo {
+    width: 300px;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    /* Silver Filter */
+    filter: grayscale(100%) brightness(130%) drop-shadow(0 0 15px rgba(192, 192, 192, 0.6));
+}
+
+.site-title, h1 {
+    font-size: 3.5rem !important;
+    color: #C0C0C0 !important; /* Silver */
+    text-shadow: 0 0 15px rgba(192, 192, 192, 0.5) !important;
+    text-align: center;
+    margin-top: 10px;
+}
+
+p {
+    font-size: 1.8rem;
+    color: #C0C0C0;
+    text-align: center;
+    max-width: 800px;
+    text-shadow: 0 0 10px rgba(192, 192, 192, 0.4);
+    margin-bottom: 30px;
+}
+
+/* 3. CONTAINER (Transparent / Open) */
+.signal-container {
+    width: 95%;
+    max-width: 900px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent; /* No box */
+}
+
+/* 4. SILVER INPUTS (Elegant Lines) */
+/* This overrides any default browser styles */
+input, textarea {
+    width: 100%;
+    background: transparent !important; /* clear glass */
+    border: none !important;
+    border-bottom: 2px solid #C0C0C0 !important; /* Silver Line */
+    color: #C0C0C0 !important;
+    
+    font-family: "Courier New", monospace;
+    font-size: 1.5rem !important;
+    padding: 10px;
+    margin-bottom: 30px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-bottom: 2px solid #ffffff !important; /* Bright White on focus */
+    box-shadow: 0 10px 20px -10px rgba(255, 255, 255, 0.2);
+}
+
+::placeholder {
+    color: rgba(192, 192, 192, 0.5) !important;
+}
+
+/* 5. SILVER BUTTONS */
+.btn {
+    display: inline-block;
+    font-family: "Snell Roundhand", cursive;
+    font-size: 1.5rem;
+    color: #C0C0C0 !important; 
+    border: 1px solid #C0C0C0 !important; 
+    text-decoration: none;
+    padding: 10px 40px;
+    margin: 20px;
+    transition: all 0.3s ease;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background: rgba(192, 192, 192, 0.2);
+    box-shadow: 0 0 25px #C0C0C0;
+    color: #ffffff !important; 
+}
+
+/* 6. NAV CONTAINER */
+.nav-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* 7. FORM LAYOUT CLEANUP */
+form {
+    width: 100%; /* Replaces inline style on <form> */
+}
+
+textarea {
+    height: 150px; /* Replaces inline style on <textarea> */
+}
+
+.form-actions {
+    text-align: center; /* Replaces inline style on the button wrapper */
+    margin-top: 10px;
+}

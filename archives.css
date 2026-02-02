@@ -1,0 +1,141 @@
+/* --- MISSION ARCHIVES: ABSOLUTE EMERALD BREACH --- */
+
+/* 1. GLOBAL TEXT OVERWRITE */
+* {
+    color: #00ffaa !important; /* Force emerald globally */
+    -webkit-text-fill-color: #00ffaa !important;
+    text-transform: none !important; 
+    font-variant: normal !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    filter: none !important;
+    background: transparent;
+}
+
+/* 2. BASE HULL: VAULT VISTA */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 100vh !important;
+    /* BACKGROUND IMAGE */
+    background-image: url('../assets/vault-view.png') !important; 
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+    
+    /* Dark Green Overlay so text pops */
+    background-color: rgba(0, 15, 10, 0.7) !important; 
+    background-blend-mode: multiply !important;
+    
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    overflow-x: hidden;
+}
+
+/* 3. SITE TITLE */
+.site-title, h1 {
+    font-family: "Snell Roundhand", cursive !important;
+    font-size: 3.5rem !important;
+    font-weight: bold !important;
+    text-shadow: 0 0 20px rgba(0, 255, 170, 0.8) !important;
+    margin-top: 50px !important; 
+    margin-bottom: 20px !important;
+    text-align: center;
+}
+
+/* --- LOGO CONTROL: EMERALD TINT --- */
+.sector-logo {
+    width: auto !important;
+    max-width: 350px !important; 
+    height: auto !important;
+    max-height: 300px !important;
+    display: block !important;
+    margin: 15px auto !important;
+    position: relative !important;
+    z-index: 100 !important;
+    
+    /* EMERALD FILTER: Transforms Gold to Glowing Green */
+    filter: sepia(100%) saturate(300%) hue-rotate(95deg) drop-shadow(0 0 15px #00ffaa) !important;
+}
+
+/* 4. STARDATE & DATES */
+.date, .stardate, h3, [class*="stardate"] {
+    color: #00ffaa !important;
+    -webkit-text-fill-color: #00ffaa !important;
+    text-transform: capitalize !important;
+    font-family: "Snell Roundhand", cursive !important;
+    font-size: 1.6rem !important;
+    font-weight: bold !important;
+    text-shadow: 0 0 10px rgba(0, 255, 170, 0.7) !important;
+    letter-spacing: 2px !important; 
+    display: block !important;
+    margin-top: 45px !important;
+    margin-bottom: 5px !important;
+    text-align: center;
+}
+
+/* 5. LOG TITLES & BODY */
+h2, .log-entry-title, p, .log-text {
+    font-family: "Snell Roundhand", cursive !important;
+    text-align: center !important;
+    text-shadow: 0 0 15px rgba(0, 255, 170, 0.6) !important;
+}
+
+h2 { font-size: 2.2rem !important; margin: 10px 0 !important; }
+p { font-size: 1.8rem !important; line-height: 1.6; max-width: 800px; width: 90%; margin-bottom: 30px !important; }
+
+
+/* 7. RETURN BUTTON CONTROL */
+.btn {
+    display: inline-block;
+    font-family: "Snell Roundhand", cursive;
+    font-size: 1.5rem;
+    color: #00ffaa !important; 
+    border: 1px solid #00ffaa; 
+    text-decoration: none;
+    padding: 10px 30px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    -webkit-text-fill-color: #00ffaa !important;
+}
+
+.btn:hover {
+    background: rgba(0, 255, 170, 0.2);
+    box-shadow: 0 0 20px #00ffaa;
+    color: #ffffff !important; 
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Navigation Button Container */
+.nav-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* --- SYSTEM STATUS MESSAGE (The Machine Voice) --- */
+/* Target the container AND any element inside it */
+#archiveFeed, 
+#archiveFeed * {
+    /* FORCE MACHINE FONT ON EVERYTHING */
+    font-family: "Courier New", monospace !important;
+    
+    font-size: 1.4rem !important;
+    color: #00ffaa !important;
+    opacity: 0.8;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    text-align: center;
+    width: 100%;
+    margin-top: 40px;
+    text-shadow: 0 0 5px #00ffaa !important;
+    
+    /* Reset any inherited font weights */
+    font-weight: normal !important;
+    font-style: normal !important;
+}
