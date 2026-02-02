@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JamesBrownOPS | Mission Logs</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/log.css">
+</head>
+<body>
+
+    <div class="site-title">JamesBrownOPS</div>
+    <img src="../assets/JamesBrownOPS logo (1) .png" class="sector-logo" alt="Logo">
+
+    <h1>Mission Log Terminal</h1>
+    
+    <div class="log-container">
+        <div class="guidelines-box">
+            <span class="protocol-tag">Log Interaction Protocals</span>
+            <ul>
+                <li><strong>Clarify Intent</strong>: Document the 'Why' before the 'How'.</li>
+                <li><strong>Identify Friction</strong>: Note any system constraints encountered.</li>
+                <li><strong>Record Truth</strong>: Ensure notes align with Black Box telemetry.</li>
+            </ul>
+        </div>
+
+        <article class="log-entry">
+            <span class="stardate">Stardate: 2026.01.26</span>
+            <h2>Subject: Build v.2 Fleet Stabilization</h2>
+            <p>The Mothership sectors (Bridge, Doctrine, Archives, Projects, Log, and Signal) are now visually and structurally synchronized. Shadowy sweep is active. Terminal interaction protocols are now the standard for all future mission data entries.</p>
+        </article>
+
+        <hr class="terminal-divider">
+
+        <div class="terminal-input">
+            <h3>Add Command Note</h3>
+            <textarea id="logInput" placeholder="Initialize entry..."></textarea>
+            <button type="button" class="btn" id="commitBtn">Commit to Log</button>
+        </div>
+
+        <div id="logDisplayArea"></div>
+        
+    </div>
+
+     <div class="nav-container">
+        <a href="../projects/projects.html" class="btn">Previous: Projects Deck</a>
+        
+        <a href="../index.html" class="btn">Return to Bridge</a>
+        
+        <a href="../signal.html" class="btn">Next: Signal Portal</a>
+    </div>
+
+<script src="../js/main.js"></script>
+
+</body>
+</html>
