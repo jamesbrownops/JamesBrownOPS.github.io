@@ -1,0 +1,193 @@
+/* --- BRIDGE: COMMAND DECK (FINAL RESTORED) --- */
+
+/* 1. GLOBAL SETTINGS (Applies to the whole ship) */
+body {
+    background-image: url('../assets/index-vista.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #000000;
+    
+    box-shadow: inset 0 0 200px rgba(0,0,0,0.9);
+    
+    font-family: "Snell Roundhand", cursive !important;
+    color: #D4AF37; 
+    
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    overflow-x: hidden; 
+}
+
+/* WARP SPEED STARS */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%; height: 200%;
+    background-image: 
+        radial-gradient(white, rgba(255,255,255,.5) 2px, transparent 4px),
+        radial-gradient(rgba(100, 200, 255, 1), transparent 3px), 
+        radial-gradient(rgba(255, 255, 255, 0.3), transparent 2px);
+    background-size: 500px 500px, 300px 300px, 100px 100px;
+    background-position: 0 0, 40px 60px, 130px 270px;
+    animation: warpSpeed 40s linear infinite;
+    opacity: 0.6; pointer-events: none; z-index: 1; 
+    transform: rotate(-5deg); 
+}
+
+/* 2. TEXT STYLING (The "Look") */
+/* This ensures text looks correct everywhere, even without animation */
+h1, .brand-name, .site-title, header div {
+    font-size: 4rem !important;
+    font-weight: normal !important;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    position: relative; z-index: 2;
+}
+
+p, h2, h3, .sub-text {
+    font-size: 2rem !important;
+    font-weight: normal !important;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    position: relative; z-index: 2;
+}
+
+/* 3. LOGO IMAGE CONTROL (Restored) */
+.logo-img {
+    max-width: 300px !important; 
+    height: auto !important;
+    
+    /* Glowing Border Box */
+    border-radius: 15px !important;
+    border: 1px solid #d4af37 !important;
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.25) !important;
+    
+    display: block !important;
+    margin: 0 auto 20px auto !important; 
+    
+    /* Optional: Soft zoom in on load */
+    animation: fadeZoomIn 1.5s ease-out;
+    
+    z-index: 2;
+    position: relative;
+}
+
+/* 4. BUTTON STYLING (Restored) */
+/* This fixes the "Blue Links" issue */
+a {
+    display: inline-block !important;
+    border: none !important; /* Holographic Style */
+    background: transparent !important;
+    color: #D4AF37 !important;
+    text-decoration: none !important;
+    font-family: "Snell Roundhand", cursive !important; /* Force font */
+    font-size: 1.8rem !important;
+    padding: 20px 30px !important;
+    margin: 15px !important;
+    min-width: 110px !important;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative; z-index: 2;
+}
+
+/* 5. THE ANIMATION SWITCHES (Opt-In Only) */
+
+/* Class for Main Title */
+.animate-fast {
+    animation: supernovaPulse 10s ease-in-out infinite;
+}
+
+/* Class for Subtext (Wait 5s) */
+.animate-delayed {
+    animation: fadeZoomIn 2.0s ease-out, supernovaPulse 10s ease-in-out 5s infinite;
+}
+
+/* Class for Buttons (Wait 7s) */
+.animate-buttons {
+    animation: fadeZoomIn 2.5s ease-out, supernovaPulse 10s ease-in-out 7s infinite;
+}
+
+/* Button Hover State */
+a:hover, .animate-buttons:hover {
+    color: #ffffff !important;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #00eaff, 0 0 80px #00eaff;
+    transform: translateY(-5px) scale(1.2);
+    animation-play-state: paused;
+}
+
+/* 6. ANIMATION KEYFRAMES */
+@keyframes fadeZoomIn {
+    0% { opacity: 0; transform: scale(2.0); filter: blur(20px); }
+    100% { opacity: 1; transform: scale(1); filter: blur(0); }
+}
+
+@keyframes supernovaPulse {
+    0% { text-shadow: 0 0 15px rgba(212, 175, 55, 0.6); color: #D4AF37; }
+    50% { text-shadow: 0 0 40px rgba(0, 234, 255, 0.9), 0 0 20px rgba(255, 255, 255, 1); color: #ffffff; }
+    100% { text-shadow: 0 0 15px rgba(212, 175, 55, 0.6); color: #D4AF37; }
+}
+
+@keyframes warpSpeed {
+    from { background-position: 0 0, 0 0, 0 0; }
+    to { background-position: -1000px 1000px, -600px 600px, -200px 200px; }
+}
+
+/* 7. NAVIGATION CONTAINER (Standardized Layout) */
+.nav-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    /* Layout Settings (Works for Bridge & Logs) */
+    margin-top: 30px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* FORCE REMOVE BOXES/BORDERS ON ALL BUTTONS */
+.nav-container a, .btn {
+    border: none !important;
+    outline: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* 8. Contact Section Styling */
+footer {
+    margin-top: 60px;       /* Spacing above the footer */
+    padding-bottom: 40px;   /* Spacing at the bottom */
+    text-align: center;     /* Centers the wording */
+    border-top: 1px solid #333; /* A thin line to separate it */
+    padding-top: 40px;
+}
+
+.contact-item {
+    margin-bottom: 30px;    /* Space between phone and email */
+}
+
+.label {
+    display: block;         /* Forces label to its own line */
+    font-size: 1rem;      /* Small sizing for the label */
+    opacity: 0.7;           /* Fades it slightly */
+    letter-spacing: 1px;    /* Spacing between letters */
+    margin-bottom: 5px;     /* Space between label and number */
+}
+
+.contact-link {
+    font-size: 1.2rem;      /* Larger sizing for the actual contact info */
+    color: inherit;         /* Keeps your site's text color */
+    text-decoration: none;  /* Removes the underline */
+}
+
+.contact-link:hover {
+    opacity: 0.8;           /* Slight fade when you hover */
+}
